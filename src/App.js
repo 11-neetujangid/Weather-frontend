@@ -15,6 +15,7 @@ import { PrivateRoute } from './Routes/PrivateRoute';
 import Dashboard from './Component/Pages/Dashboard';
 import Logout from './Component/Pages/Logout';
 import NavLinks from './Component/NavLinks';
+import HistoryPage from './Component/Pages/History'
 
 
 const store = createStore(reducer, applyMiddleware(thunk));
@@ -31,6 +32,7 @@ function App() {
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PublicRoute exact path="/" component={Signup} />
         <PublicRoute exact path="/signin" component={Signin} />
+        <PrivateRoute exact path="/history" component={HistoryPage} />
         <PrivateRoute exact path="/logout" component={Logout} />
        
 

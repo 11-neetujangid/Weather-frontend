@@ -1,4 +1,6 @@
-import { SIGNIN, SIGNIN_USERS, SIGNUP_USERS, USER_LOGOUT, CITY_NAME } from "../Actions/action"
+import { SIGNIN, SIGNIN_USERS, SIGNUP_USERS, USER_LOGOUT, CITY_NAME, WEATHER_DATA,
+  CURR_LOCATION
+} from "../Actions/action"
 
 
 const initialState = {
@@ -18,7 +20,9 @@ const initialState = {
     userId: localStorage.getItem("id"),
     name: localStorage.getItem("name"),
 
-    city: ''
+    city: '',
+    data:[],
+    location:[]
 }
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -56,8 +60,22 @@ const reducer = (state = initialState, action) => {
             console.log(action.payload)
             return {
                 ...state,
-                city: action.payload,
+                city: action.payload.city,
             }
+            case WEATHER_DATA:
+                console.log('weather data');
+                console.log(action.payload)
+                return {
+                    ...state,
+                    data: action.payload,
+                }
+                case CURR_LOCATION:
+                    console.log('current loaction',action.payload);
+                    return {
+                        ...state,
+                        loaction: action.payload,
+                    
+                    }
         default:
             return state;
     }

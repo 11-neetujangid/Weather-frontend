@@ -29,7 +29,6 @@ const Signin = () => {
         <div>
             <from>
                 <h2>Login Page</h2>
-
                 Email <input name="email" type="email" onChange={(e) => onchangeInput(e)} placeholder="Enter your email id" /><br></br>
                 Password<input name="password" type="password" onChange={onchangeInput} placeholder="Enter your password" /><br></br>
                 <Button variant="primary" onClick={() => editUserDetails()}>Login</Button>

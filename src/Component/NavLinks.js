@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { Link } from "react-router-dom";
+import { Nav, Navbar } from "react-bootstrap";
 
 
 const NavLinks = () => {
@@ -9,17 +9,22 @@ const NavLinks = () => {
         <div>
             {!token ?
                 (
-                    <li>
-                        <Link to='/'>Sign Up</Link> {' '}
-                        <Link to='/signin'>Signin In</Link>
-                    </li>
+                    <Navbar bg="dark" variant="dark">
+                        <Nav className="me-auto" >
+                            <Nav className="me-auto" ></Nav>
+                            <Nav.Link href='/'>Sign Up</Nav.Link>
+                            <Nav.Link href='/signin'>Signin In</Nav.Link>
+                        </Nav>
+                    </Navbar>
                 )
                 : (
-                    <li>
-                        <Link to='/dashboard'>DashBoard</Link><br />
-                        <Link to='/logout'>Logout</Link>{' '}
-
-                    </li>
+                    <Navbar bg="dark" variant="dark">
+                        <Nav className="me-auto" >
+                            <Nav.Link href='/dashboard'>DashBoard</Nav.Link>
+                            <Nav.Link href='/history'>History</Nav.Link>
+                            <Nav.Link href='/logout'>Logout</Nav.Link>
+                        </Nav>
+                    </Navbar>
                 )
             }
         </div>

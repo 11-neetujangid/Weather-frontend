@@ -1,11 +1,11 @@
 import { Button } from "react-bootstrap"
 import { signUpUser } from "../../Actions/action";
-import { useDispatch , useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../Services/api";
 import { useHistory } from "react-router";
 const Signup = () => {
     const dispatch = useDispatch();
-    const history =useHistory();
+    const history = useHistory();
 
     const register = useSelector(state => state.register);
     console.log(register);

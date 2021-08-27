@@ -1,8 +1,6 @@
 
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
-// import 'bootstrap/dist/css/bootstrap.css'
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 import Signup from './Component/Pages/Signup';
 import { Provider } from 'react-redux';
@@ -22,24 +20,24 @@ const store = createStore(reducer, applyMiddleware(thunk));
 function App() {
   return (
     <Provider store={store}>
-    <div className ="App">
-      <Router>
-        <header>
-          <NavLinks/>
+      <div className="App">
+        <Router>
+          <header>
+            <NavLinks />
 
-        </header>
-        <Switch>
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PublicRoute exact path="/" component={Signup} />
-        <PublicRoute exact path="/signin" component={Signin} />
-        <PrivateRoute exact path="/history" component={HistoryPage} />
-        <PrivateRoute exact path="/logout" component={Logout} />
-       
+          </header>
+          <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PublicRoute exact path="/" component={Signup} />
+            <PublicRoute exact path="/signin" component={Signin} />
+            <PrivateRoute exact path="/history" component={HistoryPage} />
+            <PrivateRoute exact path="/logout" component={Logout} />
 
-        </Switch>
-      </Router>
-    
-    </div>
+
+          </Switch>
+        </Router>
+
+      </div>
     </Provider>
   )
 }
